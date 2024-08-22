@@ -22,7 +22,8 @@ export async function getUser (id) {
 }
 
 export async function createUser (user) {
-
+    const response = await axios.post(`${URL}/users`, user);
+    return response;
 }
 
 export async function updateUser (id, user) {
