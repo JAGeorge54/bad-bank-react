@@ -12,21 +12,14 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={ Link } to='/'>Home</Nav.Link>
-            <Nav.Link as={ Link } to='/login'>Login</Nav.Link>
-            <Nav.Link as={ Link } to='/createaccount'>Create Account</Nav.Link>
-            <NavDropdown title="User Actions" id="basic-nav-dropdown">
-              <NavDropdown.Item as={ Link } to='/balance'>Balance</NavDropdown.Item>
-              <NavDropdown.Item as={ Link } to='/deposit'>
-                Deposit
-              </NavDropdown.Item>
-              <NavDropdown.Item as={ Link } to='/withdraw'>Withdraw</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={ Link } to='/logout'>
-                Logout
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link as={ Link } to='/home'>Home</Nav.Link>
             <Nav.Link as={ Link } to='/alldata'>AllData</Nav.Link>
+            <NavDropdown title="User Actions" id="basic-nav-dropdown">
+              <NavDropdown.Item as={ Link } to='/createaccount'>Create Account</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={ Link } to='/logout'>Logout</NavDropdown.Item>
+              <NavDropdown.Item as={ Link } to='/login'>Login</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
