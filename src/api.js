@@ -27,7 +27,8 @@ export async function createUser (user) {
 }
 
 export async function updateUser (id, user) {
-
+    const response = await axios.put(`${URL}/users/${id}`, user);
+    return response;
 }
 
 export async function deleteUser (id) {
