@@ -31,5 +31,6 @@ export async function updateUser (id, user) {
 }
 
 export async function deleteUser (id) {
-
+    const response = await axios.delete(`${URL}/users/:${id}`);
+    return response;
 }
