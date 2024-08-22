@@ -6,12 +6,9 @@ import './App.css'
 import Home          from './pages/home'
 import AllData       from './pages/alldata'
 import CreateAccount from './pages/createaccount'
-import NavBar        from './components/navbar'
+import Landing from './pages/landing';
 import Login         from './pages/login'
-import Balance       from './pages/balance'
-import Deposit       from './pages/deposit'
-import Withdraw      from './pages/withdraw'
-import Logout        from './components/logout'
+import Layout from './components/layout';
 
 function App() {
   
@@ -19,16 +16,15 @@ function App() {
   return (
     <>
       <UserContextProvider>
-        <NavBar/>
+        {/* <NavBar/> */}
         <Routes>
-          <Route path='/' element={ <Home/> } />
-          <Route path='/createaccount' element={ <CreateAccount/> } />
-          <Route path='/login' element={ <Login/> } />
-          <Route path='/balance' element={ <Balance/> } />
-          <Route path='/deposit' element={ <Deposit/> } />
-          <Route path='/withdraw' element={ <Withdraw/> } />
-          <Route path='/logout' element={ <Logout/> } />
-          <Route path='/alldata' element={ <AllData/> } />
+          <Route path='/' element={<Landing />}/>
+          <Route element={<Layout />}>
+            <Route path='/home' element={ <Home/> } />
+            <Route path='/createaccount' element={ <CreateAccount/> } />
+            <Route path='/login' element={ <Login/> } />
+            <Route path='/alldata' element={ <AllData/> } />
+          </Route>
         </Routes>
       </UserContextProvider>
     </>
