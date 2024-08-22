@@ -1,8 +1,7 @@
 import { useState, useContext } from 'react';
-import UserContext from '../../context/UserContext'
+import UserContext from '../context/UserContext'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import './createAccount.css'
 
 function CreateAccount() {
     const {users, setUsers} = useContext(UserContext);
