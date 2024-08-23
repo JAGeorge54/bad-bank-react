@@ -15,8 +15,6 @@ function NavBar() {
             <Nav.Link as={ Link } to='/home'>Home</Nav.Link>
             <Nav.Link as={ Link } to='/alldata'>AllData</Nav.Link>
             <NavDropdown title="User Actions" id="basic-nav-dropdown">
-              <NavDropdown.Item as={ Link } to='/createaccount'>Create Account</NavDropdown.Item>
-              <NavDropdown.Divider />
               <NavDropdown.Item as={ Link } to='/logout'>Logout</NavDropdown.Item>
               <NavDropdown.Item as={ Link } to='/login'>Login</NavDropdown.Item>
             </NavDropdown>
