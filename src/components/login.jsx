@@ -1,7 +1,8 @@
 import UserContext from '../context/UserContext';
 import { verifyUser } from '../api';
 import { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Login() {
     
@@ -10,6 +11,8 @@ function Login() {
         password: ''
     });
 
+    const navigate = useNavigate();
+
     function handleChange (e) {
         setUser({ ...user, [e.target.name]: e.target.value});
     };
@@ -17,7 +20,13 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault();
         let response = await verifyUser(user);
-        console.log(response);
+        if (response) {
+            sessionStorage.setItem("User", response);
+            axios.defaults.headers.common["Authorization"] = `Bearer ${response}`;
+            navigate('/home');
+        } else {
+            alert('Login Failed');
+        }
         
     };
 
