@@ -35,3 +35,12 @@ export async function deleteUser (id) {
     const response = await axios.delete(`${URL}/users/:${id}`);
     return response;
 }
+
+export async function verifyUser (user) {
+    const response = await axios.post(`${URL}/users/login`, user);
+    if (response.success) {
+        return response.data
+    } else {
+        throw new Error(response.statusText)
+    }
+}
