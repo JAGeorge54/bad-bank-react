@@ -2,9 +2,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function NavBar() {
+
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    sessionStorage.removeItem("User");
+    navigate("/");
+  }
+
     return(
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -14,10 +22,7 @@ function NavBar() {
           <Nav className="me-auto">
             <Nav.Link as={ Link } to='/home'>Home</Nav.Link>
             <Nav.Link as={ Link } to='/alldata'>AllData</Nav.Link>
-            <NavDropdown title="User Actions" id="basic-nav-dropdown">
-              <NavDropdown.Item as={ Link } to='/logout'>Logout</NavDropdown.Item>
-              <NavDropdown.Item as={ Link } to='/login'>Login</NavDropdown.Item>
-            </NavDropdown>
+            {<Nav.Link onClick={handleLogout}>Logout</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>
