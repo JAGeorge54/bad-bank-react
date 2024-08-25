@@ -1,6 +1,7 @@
 import CreateAccount from "../components/createaccount";
 import Login from "../components/login";
 import { useState } from "react";
+import { Button } from "@/components/ui/button"
 
 function Landing() {
 
@@ -13,11 +14,11 @@ function Landing() {
             {!view ?
             <div className="flex flex-col w-96">
                 <CreateAccount />
-                <button onClick={() => setView(!view)}>Login</button>
+                <Button onClick={() => setView(!view)}>Login</Button>
             </div> :
             <div className="flex flex-col w-96">
                 <Login />
-                <button onClick={() => setView(!view)}>Create New Account</button>
+                <Button onClick={() => setView(!view)}>Create New Account</Button>
             </div>}
         </div>
     );
