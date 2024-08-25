@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 function Login() {
     
@@ -33,8 +34,8 @@ function Login() {
 
     return(
         <form onSubmit={handleSubmit}>
-            <input placeholder={'Email'} onChange={handleChange} name='email' required maxLength={40}/>
-            <input placeholder={'Password'} onChange={handleChange} name='password' type='password' required maxLength={20}/>
+            <Input placeholder={'Email'} onChange={handleChange} name='email' required maxLength={40}/>
+            <Input placeholder={'Password'} onChange={handleChange} name='password' type='password' required maxLength={20}/>
             <Button type='submit'>Login</Button>
         </form>
     )
