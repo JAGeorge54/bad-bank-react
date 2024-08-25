@@ -14,7 +14,7 @@ function Landing() {
             {!view ?
             <div className="flex flex-col w-96">
                 <CreateAccount />
-                <Button onClick={() => setView(!view)}>Login</Button>
+                <Button onClick={() => setView(!view)}>Already have an account? Login</Button>
             </div> :
             <div className="flex flex-col w-96">
                 <Login />
