@@ -20,7 +20,7 @@ function Landing() {
                 <button onClick={() => setView(!view)}>Create New Account</button>
             </>}
         </>
-     );
+    );
 }
 
 export default Landing;
