@@ -33,10 +33,10 @@ function Login() {
     };
 
     return(
-        <form onSubmit={handleSubmit}>
-            <Input placeholder={'Email'} onChange={handleChange} name='email' required maxLength={40}/>
-            <Input placeholder={'Password'} onChange={handleChange} name='password' type='password' required maxLength={20}/>
-            <Button type='submit'>Login</Button>
+        <form onSubmit={handleSubmit} className='flex flex-col'>
+            <Input placeholder={'Email'} onChange={handleChange} name='email' required maxLength={40} className='mb-2'/>
+            <Input placeholder={'Password'} onChange={handleChange} name='password' type='password' required maxLength={20} className='mb-2'/>
+            <Button type='submit' className='mb-4'>Login</Button>
         </form>
     )
 }

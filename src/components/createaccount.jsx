@@ -29,11 +29,11 @@ function CreateAccount() {
     };
 
     return(
-        <form onSubmit={handleSubmit}>
-            <Input placeholder={'Name'} onChange={handleChange} name='name' required maxLength={20}/>
-            <Input placeholder={'Email'} onChange={handleChange} name='email' required maxLength={40}/>
-            <Input placeholder={'Password'} onChange={handleChange} name='password' type='password' required maxLength={20}/>
-            <Button type='submit'>Create Account</Button>
+        <form onSubmit={handleSubmit} className='flex flex-col'>
+            <Input placeholder={'Name'} onChange={handleChange} name='name' required maxLength={20} className='mb-2'/>
+            <Input placeholder={'Email'} onChange={handleChange} name='email' required maxLength={40} className='mb-2'/>
+            <Input placeholder={'Password'} onChange={handleChange} name='password' type='password' required maxLength={20} className='mb-2'/>
+            <Button type='submit' className='mb-4'>Create Account</Button>
         </form>
     )
 }
