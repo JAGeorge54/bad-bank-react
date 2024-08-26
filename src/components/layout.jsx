@@ -16,9 +16,11 @@ function Layout() {
     return ( 
         <>
             <NavBar />
-            <Outlet />
+            <main className='flex w-screen justify-center mt-10'>
+                <Outlet />
+            </main>
         </>
-     );
+    );
 }
 
 export default Layout;
