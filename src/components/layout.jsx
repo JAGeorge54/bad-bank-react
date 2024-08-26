@@ -16,7 +16,7 @@ function Layout() {
     return ( 
         <>
             <NavBar />
-            <main className='flex w-screen justify-center mt-10'>
+            <main className='flex flex-col w-screen justify-center mt-10'>
                 <Outlet />
             </main>
         </>
