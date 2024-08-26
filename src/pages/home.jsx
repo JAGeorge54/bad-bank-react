@@ -9,6 +9,7 @@ function Home() {
 
     const [user, setUser] = useState({});
     const [deposit, setDeposit] = useState(true);
+    const [radio, setRadio] = useState('');
 
     useEffect(() => {
         async function loadUserData() {
@@ -16,8 +17,15 @@ function Home() {
             const decodedUser = jwtDecode(token);
             setUser(decodedUser);
         }
+        if (radio === 'deposit') {
+            console.log(radio);
+            setDeposit(true)
+        } else {
+            console.log(radio);
+            setDeposit(false);
+        }
         loadUserData();
-    }, [])
+    }, [radio])
 
     return(
         <>
@@ -39,16 +47,18 @@ function Home() {
                     <form className="flex justify-center">
                         <Input placeholder={'Amount'} name='amount' className='mb-2 w-1/3'/>
                         <div className="pb-2 px-2">
-                            <RadioGroup defaultValue="comfortable">
-                                <div className="flex items-center space-x-2">
-                                    <RadioGroupItem value="comfortable" id="r2" />
-                                    <Label htmlFor="r2">Deposit</Label>
+                            <fieldset>
+                                <div className="flex flex-col">
+                                    <div className="flex flex-row">
+                                        <input type="radio" id="deposit" name="transactionType" value="deposit" onChange={e=>setRadio(e.target.value)}/>
+                                        <label>Deposit</label>
+                                    </div>
+                                    <div className="flex flex-row">
+                                        <input type="radio" id="withdraw" name="transactionType" value="withdraw" onChange={e=>setRadio(e.target.value)}/>
+                                        <label>Withdraw</label>
+                                    </div>
                                 </div>
-                                <div className="flex items-center space-x-2">
-                                    <RadioGroupItem value="compact" id="r3" />
-                                    <Label htmlFor="r3">Withdraw</Label>
-                                </div>
-                            </RadioGroup>
+                            </fieldset>
                         </div>
                         <Button type='submit' className='mb-2'>Submit</Button>
                     </form>
