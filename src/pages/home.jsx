@@ -18,10 +18,8 @@ function Home() {
             setUser(decodedUser);
         }
         if (radio === 'deposit') {
-            console.log(radio);
             setDeposit(true)
         } else {
-            console.log(radio);
             setDeposit(false);
         }
         loadUserData();
