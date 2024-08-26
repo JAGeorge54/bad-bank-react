@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { jwtDecode } from 'jwt-decode';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 function Home() {
 
@@ -26,15 +28,29 @@ function Home() {
             </div>
             <div className="flex justify-center">
                 <div className="flex flex-col justify-center m-20 border-solid border-2 rounded-lg w-3/5">
-                    <div>
-                        {deposit ? 
-                        <h1>Deposit</h1>
-                        : <h1>Withdraw</h1>
-                        }
+                    <div className="flex justify-center p-2">
+                        <div className="border-solid border-2 rounded-lg w-1/4">
+                            {deposit ? 
+                            <h1 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">Deposit</h1>
+                            : <h1 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">Withdraw</h1>
+                            }
+                        </div>
                     </div>
                     <form className="flex justify-center">
                         <Input placeholder={'Amount'} name='amount' className='mb-2 w-1/3'/>
-                        <Button type='submit' className='mb-4'>Submit</Button>
+                        <div className="pb-2 px-2">
+                            <RadioGroup defaultValue="comfortable">
+                                <div className="flex items-center space-x-2">
+                                    <RadioGroupItem value="comfortable" id="r2" />
+                                    <Label htmlFor="r2">Deposit</Label>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                    <RadioGroupItem value="compact" id="r3" />
+                                    <Label htmlFor="r3">Withdraw</Label>
+                                </div>
+                            </RadioGroup>
+                        </div>
+                        <Button type='submit' className='mb-2'>Submit</Button>
                     </form>
                 </div>
             </div>
