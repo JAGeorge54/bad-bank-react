@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { jwtDecode } from 'jwt-decode';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+
 
 function Home() {
 
@@ -17,10 +16,10 @@ function Home() {
             const decodedUser = jwtDecode(token);
             setUser(decodedUser);
         }
-        if (radio === 'deposit') {
-            setDeposit(true)
+        if (radio === 'withdraw') {
+            setDeposit(false)
         } else {
-            setDeposit(false);
+            setDeposit(true);
         }
         loadUserData();
     }, [radio])
@@ -48,7 +47,7 @@ function Home() {
                             <fieldset>
                                 <div className="flex flex-col">
                                     <div className="flex flex-row">
-                                        <input type="radio" id="deposit" name="transactionType" value="deposit" onChange={e=>setRadio(e.target.value)}/>
+                                        <input type="radio" id="deposit" name="transactionType" value="deposit" defaultChecked onChange={e=>setRadio(e.target.value)}/>
                                         <label>Deposit</label>
                                     </div>
                                     <div className="flex flex-row">
