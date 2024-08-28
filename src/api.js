@@ -12,7 +12,7 @@ export async function getUsers () {
 }
 
 export async function getUser (id) {
-    const response = await axios.get(`${URL}/users/:${id}`);
+    const response = await axios.get(`${URL}/users/${id}`);
     if (response.status === 200) {
         return response.data;
     } else {
@@ -32,7 +32,7 @@ export async function updateUser (id, user) {
 }
 
 export async function deleteUser (id) {
-    const response = await axios.delete(`${URL}/users/:${id}`);
+    const response = await axios.delete(`${URL}/users/${id}`);
     return response;
 }
 
