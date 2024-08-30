@@ -84,7 +84,7 @@ function DepositWithdraw() {
                                 </div>
                             </fieldset>
                         </div>
-                        <Button type='submit' className='mb-2 bg-secondary'>Submit</Button>
+                        <Button type='submit' className={`mb-2 ${deposit ? 'bg-green-500 hover:bg-green-700' : 'bg-red-500 hover:bg-red-700'} `}>Submit</Button>
                     </form>
                 </div>
             </div>
