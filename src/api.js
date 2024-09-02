@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://badbank-react-backend-orrzhwipe-jesses-projects-a1dfc340.vercel.app';
+const URL = 'https://badbank-react-backend.vercel.app';
 
 export async function getUsers () {
     const response = await axios.get(`${URL}/users`);
