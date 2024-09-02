@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:3000';
+const URL = 'https://badbank-react-backend.onrender.com';
 
 export async function getUsers () {
     const response = await axios.get(`${URL}/users`);
