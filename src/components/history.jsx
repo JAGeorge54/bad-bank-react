@@ -1,7 +1,20 @@
-function History() {
+import { useEffect, } from "react";
+
+function History(user) {
+    useEffect(() => {
+
+    }, []);
+
     return ( 
         <>
-            <div> Testing Branch</div>
+            {user.user.history?.map((balance, key) => {
+                return (
+                    <>
+                        <h1 key={key}>{balance}</h1>
+                    </>
+                )
+            })}
+            {/* {JSON.stringify(user.user.history)} */}
         </>
     );
 }
