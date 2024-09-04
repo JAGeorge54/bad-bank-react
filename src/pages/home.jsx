@@ -28,7 +28,7 @@ function Home() {
     return(
         <>
             <DepositWithdraw />
-            <History />
+            <History user={user} />
         </>
 
     )
