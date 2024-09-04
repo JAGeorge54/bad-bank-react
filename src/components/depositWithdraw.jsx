@@ -33,6 +33,7 @@ function DepositWithdraw() {
         let newBalance = amount + user.balance;
         let tempUser = user;
         tempUser.balance = newBalance;
+        tempUser.history = [...tempUser.history, newBalance]
         console.log(tempUser);
         let updatedUser = await updateUser(tempUser._id, tempUser);
         setUser(updatedUser);
@@ -42,6 +43,7 @@ function DepositWithdraw() {
             let newBalance = user.balance - amount;
             let tempUser = user;
             tempUser.balance = newBalance;
+            tempUser.history = [...tempUser.history, newBalance]
             console.log(tempUser);
             let updatedUser = await updateUser(tempUser._id, tempUser);
             setUser(updatedUser);
