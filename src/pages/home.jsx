@@ -10,8 +10,7 @@ import History from "../components/history"
 function Home() {
 
     const [user, setUser] = useState({});
-    const [amount, setAmount] = useState(0);
-
+    
     useEffect(() => {
         async function loadUserData() {
             const token = sessionStorage.getItem('User');
@@ -21,14 +20,14 @@ function Home() {
         }
         
         loadUserData();
-    }, [])
+    }, [user])
 
     
 
     return(
         <>
             <DepositWithdraw />
-            <History />
+            <History user={user} />
         </>
 
     )
