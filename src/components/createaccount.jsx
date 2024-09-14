@@ -3,6 +3,7 @@ import { createUser } from '../api';
 import { useState } from 'react';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 
 function CreateAccount() {
@@ -33,6 +34,10 @@ function CreateAccount() {
             <Input placeholder={'Name'} onChange={handleChange} name='name' required maxLength={20} className='mb-2'/>
             <Input placeholder={'Email'} onChange={handleChange} name='email' required maxLength={40} className='mb-2'/>
             <Input placeholder={'Password'} onChange={handleChange} name='password' type='password' required maxLength={20} className='mb-2'/>
+            <div className='flex flex-row gap-2'>
+                <label>Admin</label>
+                <input type='checkbox' name='Admin'/>
+            </div>
             <Button type='submit' className='mb-4'>Create Account</Button>
         </form>
     )
